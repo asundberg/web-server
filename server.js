@@ -19,7 +19,7 @@ app.use(middleware.logger);
 // If this was added after app.get, it would never run, so it's important that it's up above.
 
 app.get('/about', middleware.requireAuthentication, function(req, res) {
-	res.send('About Us');
+	res.send('About Us!');
 });
 
 app.use(express.static(__dirname + '/public'));
