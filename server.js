@@ -2,16 +2,8 @@ var express = require('express');
 var app = express();
 var PORT = 3000; // All upper case in a variable in js means that you should NOT change the value of the variable. Port 3000 is usually not reserved, so it won't cause any conflicts or problems.
 
-var middleware = {
-	requireAuthentication: function(req, res, next) {
-		console.log('private route hit!');
-		next();
-	},
-	logger: function(req, res, next) {
-		console.log('Request: ' + new Date().toString() + ' ' + req.method + ' ' + req.originalUrl);
-		next();
-	}
-};
+var middleware = require('./middleware.js');
+
 // Middleware is a part of express.
 
 // app.use(middleware.requireAuthentication);
