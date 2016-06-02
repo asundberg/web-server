@@ -1,6 +1,8 @@
 var express = require('express');
 var app = express();
-var PORT = 3000; // All upper case in a variable in js means that you should NOT change the value of the variable. Port 3000 is usually not reserved, so it won't cause any conflicts or problems.
+var PORT = process.env.PORT || 3000; 
+// All upper case in a variable in js means that you should NOT change the value of the variable. Port 3000 is usually not reserved, so it won't cause any conflicts or problems.
+// process.env.PORT is a heroku port.
 
 var middleware = require('./middleware.js');
 
